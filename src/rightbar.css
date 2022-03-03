@@ -1,4 +1,38 @@
 .rightbar-body{
     width: 65%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.brand{
+    color: white;
+    font-weight: 900 !important;
+    -webkit-text-stroke: 0.1px black;
+    margin-left: 50px;
+    font-size: 10px;
+}
+.celsius-container{
+  
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.celsius{
+    font-size: 120px;
+    -webkit-text-stroke: 0.5px black;
+}
+.place{
+    font-size: 25px;
+    -webkit-text-stroke: 0.2px black;
+}
+.image{
+    width: 60px !important;
+    height: 60px !important;
+    margin-left: 10px;
 }
