@@ -1,0 +1,90 @@
+.leftbar-body{
+    width: 35%;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    border-left: 0.5px rgba(46, 45, 45, 0.459) solid;
+}
+.input{
+    
+    height: auto;
+    display: flex;
+    margin-left: 60px;
+    align-items: center;
+    justify-content: end;
+   
+    
+
+}
+
+.input input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 90%;
+    border-bottom: 0.5px solid white;
+    margin-right: 50px;
+    padding-bottom: 7px;
+    margin-top: 48px;
+
+}
+::placeholder{
+    color: white;
+}
+
+.first-hr{
+    width: 80%;
+}
+.search-icon{
+    background-color: #eff1f74d;
+    height: 80px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.suggested-places{
+        
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: white;
+    font-weight: normal;
+    margin-top: 50px;
+    font-size: 14px;
+}
+.suggested-places p{
+    margin-bottom: 30px;
+}
+
+.hr{
+    width: 400px;
+    margin-left: 60px;
+    margin-top: 20px;
+    height: 0.5px;
+}
+
+.wet-details{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: white;
+    font-weight: normal;
+    margin-top: 50px;
+    font-size: 17px;
+}
+
+.wet-details h1{
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.wd-subdiv p{
+    margin-bottom: 30px;
+
+}

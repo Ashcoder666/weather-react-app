@@ -1,9 +1,12 @@
-
+import './app.css'
+import RightBar from './RightBar';
+import LeftBar from './LeftBar';
 
 function App() {
   return (
-    <div className="App">
-  
+    <div className="homepage-body">
+      <RightBar />
+      <LeftBar />
     </div>
   );
 }
