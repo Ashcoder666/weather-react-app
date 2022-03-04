@@ -40,23 +40,37 @@ function App() {
       console.error(error);
     });};
 
-var promise = new Promise((resolve,reject)=>{
-  if(navigator.geolocation.getCurrentPosition){
-    
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        resolve(
-          setLat(position.coords.latitude),
-  setLong(position.coords.longitude)
-        )
-      });
 
-  }else{
-    reject(alert("error"))
-  }
-})
+const getgeoloc = async()=>{
+ 
+}
+
+const promisefunc =() =>{
+
+  var promise = new Promise((resolve,reject)=>{
+    if(navigator.geolocation.getCurrentPosition){
+      
+    resolve(
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          
+            setLat(position.coords.latitude)
+    setLong(position.coords.longitude)
+          
+        })
+
+    )
+  
+    }else{
+      reject(alert("error"))
+    }
+  })
+return promise
+}
+
     
-      promise.then(()=>{
+      promisefunc().then(()=>{
   getweather()
 })
       
