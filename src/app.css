@@ -23,6 +23,6 @@
         width: 100%;
         flex-direction: column;
         height: auto;
-        background-size: auto;
+        background-size: cover;
     }
 }
