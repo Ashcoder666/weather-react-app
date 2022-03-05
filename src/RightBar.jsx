@@ -15,7 +15,7 @@ const RightBar = ({loc}) => {
     <h1>WEATHER APP</h1>
       </div>
       <div className="celsius-container">
-        <div className="celsius">{loc&&loc.current.temp_c}゜</div>
+        <div className="celsius">{loc&&loc.current.temp_c}°C</div>
         <div className="place">
           <h2>{loc?`${loc.location.name},${loc.location.region}`:<p>Allow Location Access</p>}</h2>
           <p>{loc&&loc.location.localtime}</p>
