@@ -2,12 +2,13 @@ import React from 'react'
 import './leftbar.css'
 import SearchIcon from '@material-ui/icons/Search';
 
-const LeftBar = () => {
+const LeftBar = ({loc,placeOnclick,getgeo}) => {
+  const [search,setSearch]= React.useState('')
   return (
     <div className='leftbar-body'>
       <div className="input">
-        <input placeholder='Another location' />
-      <div className="search-icon">
+        <input className='search-input' placeholder='Search for another location' onChange={(e)=>{setSearch(e.target.value)}}/>
+      <div className="search-icon" onClick={()=>placeOnclick(search)}>
       <SearchIcon />
       </div>
       </div>
@@ -17,12 +18,13 @@ const LeftBar = () => {
 
 
     
-     
+      <button className='gps' onClick={()=>getgeo()}>Current Location</button>
       <div className="suggested-places">
-        <p>washimgton</p>
-        <p>newyork</p>
-        <p>california</p>
-        <p>sanfrasisco</p>
+        
+        <p onClick={()=>placeOnclick("delhi")} >Delhi</p>
+        <p onClick={()=>placeOnclick("mumbai")}>Mumbai</p>
+        <p onClick={()=>placeOnclick("bangalore")}>Bangalore</p>
+        <p onClick={()=>placeOnclick("kochi")}>Kochi</p>
       </div>
 
       
@@ -30,13 +32,14 @@ const LeftBar = () => {
 
        
       <div className="wet-details">
-        <h1  >weather deatails</h1>
+        <h1  >Weather Details</h1>
        
        <div className='wd-subdiv'>
-       <p>something</p>
-        <p>something</p>
-        <p>something</p>
-        <p>something</p>
+       <p className='subdiv-cont' > <span>Humidity</span>  <span>{loc&&loc.current.humidity}</span></p>
+       <p className='subdiv-cont' > <span>Pressure</span>  <span>{loc&&loc.current.pressure_in}</span></p>
+       <p className='subdiv-cont' > <span>Wind</span>  <span>{loc&&loc.current.wind_kph}</span></p>
+       <p className='subdiv-cont' > <span>Feels Like</span>  <span>{loc&&loc.current.feelslike_c}</span></p>
+        
        </div>
         
         

@@ -28,7 +28,7 @@
 
 }
 ::placeholder{
-    color: white;
+    color: rgba(255, 255, 255, 0.623);
 }
 
 .first-hr{
@@ -50,13 +50,14 @@
     margin-left: 60px;
     align-items: flex-start;
     justify-content: flex-start;
-    color: white;
+    color: rgba(255, 255, 255, 0.623);
     font-weight: normal;
     margin-top: 50px;
     font-size: 14px;
 }
 .suggested-places p{
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .hr{
@@ -71,12 +72,13 @@
     display: flex;
     flex-direction: column;
     margin-left: 60px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    color: white;
+    /* align-items: flex-start;
+    justify-content: flex-start; */
+    color: rgba(255, 255, 255, 0.623);
     font-weight: normal;
     margin-top: 50px;
     font-size: 17px;
+    margin-right: 200px;
 }
 
 .wet-details h1{
@@ -86,5 +88,18 @@
 
 .wd-subdiv p{
     margin-bottom: 30px;
+    
 
+}
+.subdiv-cont{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.gps{
+    margin-left: 60px;
+}
+.search-input{
+    color: white;
+    font-size: 20px;
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './rightbar.css'
 
 
@@ -17,7 +17,7 @@ const RightBar = ({loc}) => {
       <div className="celsius-container">
         <div className="celsius">{loc&&loc.current.temp_c}゜</div>
         <div className="place">
-          <h2>{loc&&`${loc.location.name},${loc.location.region}`}</h2>
+          <h2>{loc?`${loc.location.name},${loc.location.region}`:<p>Allow Location Access</p>}</h2>
           <p>{loc&&loc.location.localtime}</p>
         </div>
         <div >
