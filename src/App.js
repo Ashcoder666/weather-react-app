@@ -22,7 +22,7 @@ const getgeo =()=>{
   getgeo()
  },[])
 
-
+console.log("hi")
 
  useEffect(()=>{
   const options = {
