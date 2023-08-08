@@ -1,8 +1,8 @@
-FROM NODE:16 as build
+FROM node:16 as build
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package*.json .
 
 RUN npm install
 
@@ -11,16 +11,14 @@ COPY . .
 
 RUN npm run build
 
-FROM NODE:16-slim
+FROM node:16-slim
 
 WORKDIR /app
 
-COPY --from=build /app/build /app
+COPY --from=build /app/build ./build
 
-EXPOSE 3000
+RUN npm install -g serve
 
-CMD ["node","index.js"]
+EXPOSE 80
 
-
-
-
+CMD ["serve","-p","80","-s","build"]
