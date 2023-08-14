@@ -1,0 +1,2 @@
+npm --version
+echo "ashirrrrrrrrrrrrrrrrrrrrrrrr"
