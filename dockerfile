@@ -1,24 +1,19 @@
-FROM node:16 as build
+FROM node:16
 
 WORKDIR /app
 
 COPY package*.json .
 
-RUN npm install
-
-
 COPY . .
+
+RUN npm install
 
 RUN npm run build
 
-FROM node:16-slim
+RUN npm i serve
 
-WORKDIR /app
+EXPOSE 3000
 
-COPY --from=build /app/build ./build
+CMD ["npx","serve","-s","build"]
 
-RUN npm install -g serve
 
-EXPOSE 80
-
-CMD ["serve","-p","80","-s","build"]
