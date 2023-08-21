@@ -5,6 +5,7 @@ pipeline {
     }
     environment {
         VERSION = "${BUILD_NUMBER}"
+         CONTAINER_NAME = "nginxreact_container"
     }
     stages {
         stage('Build Docker Image') {
@@ -25,8 +26,15 @@ pipeline {
         stage('Deploy Container') {
             steps {
                 script {
+                    def existingContainerId = sh(script: "docker ps -q -f name=${CONTAINER_NAME}", returnStdout: true).trim()
+                    
+                    if (existingContainerId) {
+                        sh "docker stop ${existingContainerId}"
+                        sh "docker rm ${existingContainerId}"
+                    }
+                    
                     // Run the Docker container
-                    sh 'docker run -p 3000:80 ashcoder666/learn_docker:nginxreact${VERSION}'
+                    sh "docker run -d -p 3000:80 --name ${CONTAINER_NAME} ashcoder666/learn_docker:nginxreact${VERSION}"
                 }
             }
         }
