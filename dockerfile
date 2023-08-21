@@ -10,6 +10,8 @@ COPY . .
 
 RUN npm run build
 
+EXPOSE 3000
+
 FROM nginx:1.23-alpine 
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
