@@ -15,7 +15,7 @@ pipeline {
                     sh 'docker build -t learn_docker .'
                  
 
-                    sh "docker tag nginxreact::${VERSION} ashcoder666/learn_docker:${VERSION} "
+                    sh "docker tag nginxreact:${VERSION} ashcoder666/learn_docker:${VERSION} "
                     sh "docker push ashcoder666/learn_docker:${VERSION} "
                 }
             }
