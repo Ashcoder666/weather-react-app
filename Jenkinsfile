@@ -21,6 +21,13 @@ pipeline {
             }
         }
     }
+
+       post {
+        always {
+            // Clean up resources, stop containers, etc.
+            sh 'docker stop $(docker ps -aq)'
+        }
+    }
     
    
 }
