@@ -15,8 +15,8 @@ pipeline {
                     sh 'docker build -t weatherpipe .'
                  
 
-                    sh "docker tag nginxreact:latest ashcoder666/learn_docker::${VERSION} "
-                    sh "docker push ashcoder666/learn_docker::${VERSION} "
+                    sh "docker tag nginxreact:latest ashcoder666/learn_docker:${VERSION} "
+                    sh "docker push ashcoder666/learn_docker:${VERSION} "
                 }
             }
         }
