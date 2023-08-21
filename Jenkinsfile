@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container
-                    sh 'docker run -p 3000:80 ashcoder666/learn_docker:weatherpipe'
+                    sh 'docker run -p 3000:80 ashcoder666/learn_docker:${VERSION}'
                 }
             }
         }
