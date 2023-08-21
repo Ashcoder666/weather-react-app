@@ -12,11 +12,11 @@ pipeline {
               script {
                     // Build Docker image from the Dockerfile
                     sh 'docker login -u ashcoder666 -p dckr_pat_YQ3SLes1ts0mHPRwjcNd1SH3opw'
-                    sh 'docker build -t learn_docker .'
+                    sh 'docker build -t nginxreact:${VERSION} .'
                  
 
-                    sh "docker tag nginxreact:${VERSION} ashcoder666/learn_docker:${VERSION} "
-                    sh "docker push ashcoder666/learn_docker:${VERSION} "
+                    sh "docker tag nginxreact:${VERSION} ashcoder666/learn_docker:nginxreact:${VERSION} "
+                    sh "docker push ashcoder666/learn_docker:nginxreact:${VERSION} "
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container
-                    sh 'docker run -p 3000:80 ashcoder666/learn_docker:${VERSION}'
+                    sh 'docker run -p 3000:80 ashcoder666/learn_docker:nginxreact:${VERSION}'
                 }
             }
         }
