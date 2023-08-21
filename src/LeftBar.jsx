@@ -7,7 +7,7 @@ const LeftBar = ({loc,placeOnclick,getgeo}) => {
   return (
     <div className='leftbar-body'>
       <div className="input">
-        <input className='search-input' placeholder='Search location' onChange={(e)=>{setSearch(e.target.value)}}/>
+        <input className='search-input' placeholder='Search my location' onChange={(e)=>{setSearch(e.target.value)}}/>
       <div className="search-icon" onClick={()=>placeOnclick(search)}>
       <SearchIcon />
       </div>
