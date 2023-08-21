@@ -3,18 +3,18 @@ pipeline {
    triggers {
         githubPush()
     }
+    environment {
+        VERSION = "${BUILD_NUMBER}"
+    }
     stages {
         stage('Build Docker Image') {
             steps {
-                script {
-                    def version = "1.0"
+              script {
                     // Build Docker image from the Dockerfile
                     sh 'docker login -u ashcoder666 -p dckr_pat_YQ3SLes1ts0mHPRwjcNd1SH3opw'
                     sh 'docker build -t weatherpipe .'
-                    sh 'docker tag nginxreact:latest ashcoder666/learn_docker:weatherpipe:${version}'
-                    sh 'docker push ashcoder666/learn_docker:weatherpipe:${version}'
-
-
+                    sh "docker tag nginxreact:latest ashcoder666/learn_docker:weatherpipe:${VERSION}"
+                    sh "docker push ashcoder666/learn_docker:weatherpipe:${VERSION}"
                 }
             }
         }
