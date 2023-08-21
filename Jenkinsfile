@@ -1,7 +1,7 @@
 pipeline {
     agent any
-     triggers {
-        scm '*/main'
+   triggers {
+        githubPush()
     }
     stages {
         stage('Build Docker Image') {
