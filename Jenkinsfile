@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    
+     triggers {
+        scm '*/main'
+    }
     stages {
         stage('Build Docker Image') {
             steps {
