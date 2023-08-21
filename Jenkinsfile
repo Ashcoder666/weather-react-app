@@ -44,13 +44,13 @@ pipeline {
     always {
         script {
             def containerIds = sh(script: "docker ps -aq --filter ancestor=ashcoder666/learn_docker:nginxreact${VERSION}", returnStdout: true).trim()
-            
-            if (containerIds) {
-                def containerIdList = containerIds.split("\\s+") // Split IDs by whitespace
-                for (def containerId in containerIdList) {
-                    sh "docker stop ${containerId}"
-                }
-            }
+            sh "echo connnt is ${containerIds}"
+            // if (containerIds) {
+                // def containerIdList = containerIds.split("\\s+") // Split IDs by whitespace
+                // for (def containerId in containerIdList) {
+                    // sh "docker stop ${containerId}"
+                // }
+            // }
         }
     }
 }
