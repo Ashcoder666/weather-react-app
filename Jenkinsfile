@@ -28,10 +28,10 @@ pipeline {
                 script {
                     def existingContainerId = sh(script: "docker ps -q -f name=${CONTAINER_NAME}", returnStdout: true).trim()
                     sh "echo container id is ${existingContainerId}"
-                    if (existingContainerId) {
-                        sh "docker stop ${existingContainerId}"
-                        sh "docker rm ${existingContainerId}"
-                    }
+                    // if (existingContainerId) {
+                        sh "docker stop ${CONTAINER_NAME}"
+                        sh "docker rm ${CONTAINER_NAME}"
+                    // }
                     
                     // Run the Docker container
                     sh "docker run -d -p 3000:80 --name ${CONTAINER_NAME} ashcoder666/learn_docker:nginxreact${VERSION}"
