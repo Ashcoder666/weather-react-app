@@ -6,7 +6,12 @@ pipeline {
             steps {
                 script {
                     // Build Docker image from the Dockerfile
+                    sh 'docker login -u ashcoder666 -p dckr_pat_YQ3SLes1ts0mHPRwjcNd1SH3opw'
                     sh 'docker build -t weatherpipe .'
+                    sh 'docker tag nginxreact:latest ashcoder666/learn_docker:weatherpipe'
+                    sh 'docker push ashcoder666/learn_docker:weatherpipe'
+
+
                 }
             }
         }
@@ -16,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container
-                    sh 'docker run  -p 3000:3000 my-app'
+                    sh 'docker run -p 3000:80 ashcoder666/learn_docker:weatherpipe'
                 }
             }
         }
