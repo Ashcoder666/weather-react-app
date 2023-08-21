@@ -7,6 +7,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    def version = "1.0"
                     // Build Docker image from the Dockerfile
                     sh 'docker login -u ashcoder666 -p dckr_pat_YQ3SLes1ts0mHPRwjcNd1SH3opw'
                     sh 'docker build -t weatherpipe .'
