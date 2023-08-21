@@ -29,12 +29,16 @@ pipeline {
         }
     }
 
-       post {
-        always {
-            // Clean up resources, stop containers, etc.
-            sh 'docker stop $(docker ps -aq)'
+   post {
+    always {
+        script {
+            def containerIds = sh(script: "docker ps -aq --filter label=org.jenkinsci.plugins.workflow.job.id=${env.BUILD_TAG}", returnStdout: true).trim()
+            if (containerIds) {
+                sh "docker stop ${containerIds}"
+            }
         }
     }
+}
     
    
 }
