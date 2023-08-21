@@ -12,7 +12,7 @@ const RightBar = ({loc}) => {
   return (
     <div className='rightbar-body'>
       <div className="brand">
-    <h1>WEATHER APPLICATIONSSSS</h1>
+    <h1>ashir</h1>
       </div>
       <div className="celsius-container">
         <div className="celsius">{loc&&loc.current.temp_c}°C</div>
