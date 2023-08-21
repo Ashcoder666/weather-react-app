@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image from the Dockerfile
-                    sh 'docker build -t my-app .'
+                    sh 'docker build -t weatherpipe .'
                 }
             }
         }
