@@ -15,8 +15,8 @@ pipeline {
                     sh 'docker build -t nginxreact:${VERSION} .'
                  
 
-                    sh "docker tag nginxreact:${VERSION} ashcoder666/learn_docker:nginxreact:${VERSION} "
-                    sh "docker push ashcoder666/learn_docker:nginxreact:${VERSION} "
+                    sh "docker tag nginxreact:${VERSION} ashcoder666/learn_docker/nginxreact:${VERSION} "
+                    sh "docker push ashcoder666/learn_docker/nginxreact:${VERSION} "
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container
-                    sh 'docker run -p 3000:80 ashcoder666/learn_docker:nginxreact:${VERSION}'
+                    sh 'docker run -p 3000:80 ashcoder666/learn_docker/nginxreact:${VERSION}'
                 }
             }
         }
