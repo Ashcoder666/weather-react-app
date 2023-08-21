@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     def existingContainerId = sh(script: "docker ps -q -f name=${CONTAINER_NAME}", returnStdout: true).trim()
-                    
+                    sh "echo container id is ${existingContainerId}"
                     if (existingContainerId) {
                         sh "docker stop ${existingContainerId}"
                         sh "docker rm ${existingContainerId}"
