@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container
-                    sh 'docker run -d -p 80:8080 my-app'
+                    sh 'docker run -d -p 3000:3000 my-app'
                 }
             }
         }
